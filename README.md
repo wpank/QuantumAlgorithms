@@ -6,4 +6,4 @@
 
 2. Run Anaconda prompt (or add Anaconda dependencies to PATH/bashrc to run in native terminal)
 
-3. 
+3. run 'python run.py'
