@@ -20,17 +20,22 @@ class QubitString:
     def qubitDimension(self):
         return self.qubit.dimension
 
+    # flips a given bit
+    def flipBits(self, bitToFlip):
+        return self.qubit.flip(bitToFlip)
 
-
+    # returns an IntQubit representation of a qubit
     def qubitToIntQubit(self):
         return IntQubit(self.qubit)
 
+    # returns a qubit representation of a qubit (if its an IntQubit)
     def intQubitToQubit(self):
         return Qubit(self.qubit)
 
+    # String represntation of a Qustring
     def __str__(self):
         return self.qustring
-
+    # Unicode representation of a Qustring 
     def __unicode__(self):
         return self.qustring
 
