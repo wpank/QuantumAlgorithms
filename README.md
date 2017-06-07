@@ -2,6 +2,6 @@
 
 ## Installation:
 
-Install [Anaconda](https://www.continuum.io/downloads)
+1. Install [Anaconda](https://www.continuum.io/downloads)
 
-
+2. 
