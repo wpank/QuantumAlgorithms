@@ -35,13 +35,13 @@ class QubitString:
     # String represntation of a Qustring
     def __str__(self):
         return self.qustring
-    # Unicode representation of a Qustring 
+    # Unicode representation of a Qustring
     def __unicode__(self):
         return self.qustring
 
 
 
 
-
-x = QubitString(Qubit(0,0,0), "Hello")
-print(x)
+    def test(self):
+        x = QubitString(Qubit(0,0,0), "Hello")
+        print(x)
