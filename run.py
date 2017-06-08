@@ -49,7 +49,7 @@ v6 = OracleGate(q6.nQubits(), f6)
 v7 = OracleGate(q7.nQubits(), f7)
 v8 = OracleGate(q8.nQubits(), f8)
 
-
+print("Applied Oracle Gates:")
 print(qapply(v1*q1.qubit))
 print(qapply(v2*q2.qubit))
 print(qapply(v3*q3.qubit))
@@ -58,7 +58,13 @@ print(qapply(v5*q5.qubit))
 print(qapply(v6*q6.qubit))
 print(qapply(v7*q7.qubit))
 print(qapply(v8*q8.qubit))
+print()
 
+print("Superposition:")
 print(q1.superposition())
+print(q2.superposition())
+print(q3.superposition())
+
+# Grover Iteration 
 print(qcol.allQubits[Qubit(qapply(grover_iteration(q2.superposition(), v2)))])
-print(qcol.allQubits[Qubit(qapply(grover_iteration(q3.superposition(), v3)))])
+#print(qcol.allQubits[Qubit(qapply(grover_iteration(q4.superposition(), v4)))])
