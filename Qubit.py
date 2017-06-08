@@ -32,6 +32,14 @@ class QubitString:
     def intQubitToQubit(self):
         return Qubit(self.qubit)
 
+    # returns number of qubits
+    def nQubits(self):
+        return self.qubit.nqubits
+
+    # reutrns an equal superposition of n qubits
+    def superposition(self):
+        return  superposition_basis(self.qubit.nqubits)
+
     # String represntation of a Qustring
     def __str__(self):
         return self.qustring
