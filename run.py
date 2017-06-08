@@ -11,7 +11,7 @@ from QubitCollection import QubitCollection
 
 q1 = QubitString(Qubit(0), "one")
 q2 = QubitString(Qubit(1,0), "two")
-q3 = QubitString(Qubit(0,0,0), "three")
+q3 = QubitString(Qubit(0,1,1), "three")
 q4 = QubitString(Qubit(0,0,0,0), "four")
 q5 = QubitString(Qubit(0,0,0,0,0), "five")
 q6 = QubitString(Qubit(0,0,0,0,0,0), "six")
@@ -60,11 +60,39 @@ print(qapply(v7*q7.qubit))
 print(qapply(v8*q8.qubit))
 print()
 
-print("Superposition:")
+print("Superpositions:")
+print("q1:")
 print(q1.superposition())
-print(q2.superposition())
-print(q3.superposition())
+print()
 
-# Grover Iteration 
+print("q2:")
+print(q2.superposition())
+print()
+
+print("q3:")
+print(q3.superposition())
+print()
+
+print("q4:")
+print(q4.superposition())
+print()
+
+print("q5:")
+print(q5.superposition())
+print()
+
+print("q6:")
+print(q6.superposition())
+print()
+
+print("q7:")
+print(q7.superposition())
+print()
+
+print("q8:")
+print(q8.superposition())
+print()
+
+# Grover Iteration
 print(qcol.allQubits[Qubit(qapply(grover_iteration(q2.superposition(), v2)))])
 #print(qcol.allQubits[Qubit(qapply(grover_iteration(q4.superposition(), v4)))])
