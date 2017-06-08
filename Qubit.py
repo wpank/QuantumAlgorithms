@@ -4,6 +4,7 @@ from sympy.physics.quantum.grover import OracleGate
 from sympy.physics.quantom.qapply import qapply
 from sympy.physics.quantum.gate import HadamardGate
 from sympy.physics.quantum.grover import superposition_basis
+from sympy.physics.quantum.grover import grover_iteration
 
 class QubitString:
 
@@ -48,8 +49,7 @@ class QubitString:
         return self.qustring
 
 
-
-
+    # Creates a QubitString for testing
     def test(self):
         x = QubitString(Qubit(0,0,0), "Hello")
         print(x)
