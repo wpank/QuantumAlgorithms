@@ -7,15 +7,27 @@ from sympy.physics.quantum.grover import superposition_basis
 from sympy.physics.quantum.grover import grover_iteration
 
 from Qubit import QubitString
+from QubitCollection import QubitCollection
 
 q1 = QubitString(Qubit(0), "one")
-q2 = QubitString(Qubit(0,0), "two")
+q2 = QubitString(Qubit(1,0), "two")
 q3 = QubitString(Qubit(0,0,0), "three")
 q4 = QubitString(Qubit(0,0,0,0), "four")
 q5 = QubitString(Qubit(0,0,0,0,0), "five")
 q6 = QubitString(Qubit(0,0,0,0,0,0), "six")
 q7 = QubitString(Qubit(0,0,0,0,0,0,0), "seven")
 q8 = QubitString(Qubit(0,0,0,0,0,0,0,0), "eight")
+
+qcol = QubitCollection()
+qcol.add(q1.qutuple)
+qcol.add(q2.qutuple)
+qcol.add(q3.qutuple)
+qcol.add(q4.qutuple)
+qcol.add(q5.qutuple)
+qcol.add(q6.qutuple)
+qcol.add(q7.qutuple)
+qcol.add(q8.qutuple)
+
 
 f1 = lambda qubits: qubits == IntQubit(1)
 f2 = lambda qubits: qubits == IntQubit(2)
@@ -48,4 +60,5 @@ print(qapply(v7*q7.qubit))
 print(qapply(v8*q8.qubit))
 
 print(q1.superposition())
-qapply(grover_iteration(q2.superposition(), v2))
+print(qcol.allQubits[Qubit(qapply(grover_iteration(q2.superposition(), v2)))])
+print(qcol.allQubits[Qubit(qapply(grover_iteration(q3.superposition(), v3)))])
