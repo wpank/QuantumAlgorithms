@@ -5,6 +5,7 @@ from sympy.physics.quantum.qapply import qapply
 from sympy.physics.quantum.gate import HadamardGate
 from sympy.physics.quantum.grover import superposition_basis
 from sympy.physics.quantum.grover import grover_iteration
+from sympy.physics.quantum.grover import apply_grover
 
 from Qubit import QubitString
 from QubitCollection import QubitCollection
@@ -12,11 +13,11 @@ from QubitCollection import QubitCollection
 q1 = QubitString(Qubit(0), "one")
 q2 = QubitString(Qubit(1,0), "two")
 q3 = QubitString(Qubit(0,1,1), "three")
-q4 = QubitString(Qubit(0,0,0,0), "four")
-q5 = QubitString(Qubit(0,0,0,0,0), "five")
-q6 = QubitString(Qubit(0,0,0,0,0,0), "six")
-q7 = QubitString(Qubit(0,0,0,0,0,0,0), "seven")
-q8 = QubitString(Qubit(0,0,0,0,0,0,0,0), "eight")
+q4 = QubitString(Qubit(0,1,0,1), "four")
+q5 = QubitString(Qubit(1,0,1,0,0), "five")
+q6 = QubitString(Qubit(0,1,0,1,1,0), "six")
+q7 = QubitString(Qubit(0,0,1,1,1,0,0), "seven")
+q8 = QubitString(Qubit(0,0,1,0,1,0,1,0), "eight")
 
 qcol = QubitCollection()
 qcol.add(q1.qutuple)
@@ -95,4 +96,6 @@ print()
 
 # Grover Iteration
 print(qcol.allQubits[Qubit(qapply(grover_iteration(q2.superposition(), v2)))])
-#print(qcol.allQubits[Qubit(qapply(grover_iteration(q4.superposition(), v4)))])
+#print(qcol.allQubits[Qubit(
+print(qapply(apply_grover(f5, q2.nQubits())))
+#])
