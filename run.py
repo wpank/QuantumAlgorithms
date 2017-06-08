@@ -29,5 +29,23 @@ f8 = lambda qubits: qubits == IntQubit(8)
 
 
 v1 = OracleGate(q1.nQubits(), f1)
+v2 = OracleGate(q2.nQubits(), f2)
+v3 = OracleGate(q3.nQubits(), f3)
+v4 = OracleGate(q4.nQubits(), f4)
+v5 = OracleGate(q5.nQubits(), f5)
+v6 = OracleGate(q6.nQubits(), f6)
+v7 = OracleGate(q7.nQubits(), f7)
+v8 = OracleGate(q8.nQubits(), f8)
 
-print(qapply(v1*IntQubit(1)))
+
+print(qapply(v1*q1.qubit))
+print(qapply(v2*q2.qubit))
+print(qapply(v3*q3.qubit))
+print(qapply(v4*q4.qubit))
+print(qapply(v5*q5.qubit))
+print(qapply(v6*q6.qubit))
+print(qapply(v7*q7.qubit))
+print(qapply(v8*q8.qubit))
+
+print(q1.superposition())
+qapply(grover_iteration(q2.superposition(), v2))
